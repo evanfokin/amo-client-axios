@@ -5,19 +5,19 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.AmoClientAxios = void 0;
 const axios_1 = __importDefault(require("axios"));
+const bottleneck_1 = __importDefault(require("bottleneck"));
 const omit_1 = __importDefault(require("lodash/omit"));
 const pick_1 = __importDefault(require("lodash/pick"));
-const bottleneck_1 = __importDefault(require("bottleneck"));
 class AmoClientAxios {
     constructor(clientId, config = {}) {
         this.clientId = clientId;
         this.config = config;
     }
     get axiosConfig() {
-        return omit_1.default(this.config, AmoClientAxios.additionalConfigKeys);
+        return (0, omit_1.default)(this.config, AmoClientAxios.additionalConfigKeys);
     }
     get additionalConfig() {
-        return pick_1.default(this.config, AmoClientAxios.additionalConfigKeys);
+        return (0, pick_1.default)(this.config, AmoClientAxios.additionalConfigKeys);
     }
     get tokenUrl() {
         return `/ajax/v2/integrations/${this.clientId}/disposable_token`;

@@ -1,8 +1,8 @@
 import axios, { AxiosInstance, AxiosRequestConfig } from 'axios'
-import { AdditionalConfig } from './interfaces/additional-config'
+import Bottleneck from 'bottleneck'
 import _omit from 'lodash/omit'
 import _pick from 'lodash/pick'
-import Bottleneck from 'bottleneck'
+import { AdditionalConfig } from './interfaces/additional-config'
 
 export class AmoClientAxios {
   constructor(public clientId: string, public config: AxiosRequestConfig & AdditionalConfig = {}) {}
