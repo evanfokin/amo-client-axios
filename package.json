@@ -32,5 +32,9 @@
     "hooks": {
       "pre-commit": "yarn run prepare"
     }
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/evanfokin/amo-client-axios.git"
   }
 }
